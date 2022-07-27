@@ -14,7 +14,7 @@ class AdminController extends Controller
     public function index()
     {
         $response = [
-            'Users' => User::where('role', 'worker')->get(),
+            'Users' => User::where('role', !'null')->get(),
             'Clients' => Client::all(),
             'Zone' => Zone::all(),
             'Orders' => Order::orderBy('zone_id')->get(),

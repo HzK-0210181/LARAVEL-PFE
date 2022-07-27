@@ -26,6 +26,7 @@ class OrderFactory extends Factory
             'Date' => fake()->date(),
             'car_type_id' => CarType::all()->random()->id,
             'zone_id' => Zone::all()->random()->id,
+            'status' => fake()->randomElement(['taken', 'suspended'])
         ];
     }
 }

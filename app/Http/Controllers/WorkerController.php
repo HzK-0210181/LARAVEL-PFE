@@ -24,6 +24,7 @@ class WorkerController extends Controller
             'last_name' => $request->input('last_name'),
             'telephone' => $request->input('telephone'),
             'email' => $request->input('email'),
+            'role' => $request->input('role')
         ]);
         return response('it worked', 200)->withHeaders(['Accept' => 'application/json']);
     }

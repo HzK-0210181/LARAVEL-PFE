@@ -24,6 +24,7 @@ return new class extends Migration
             $table->date('Date');
             $table->foreignIdFor(CarType::class);
             $table->foreignIdFor(Zone::class)->nullable();
+            $table->string('status');
             $table->timestamps();
         });
     }
