@@ -28,11 +28,7 @@ return [
 
     'allowed_headers' => ['*'],
 
-<<<<<<< HEAD
-    'exposed_headers' => [],
-=======
     'exposed_headers' => ['Authorization'],
->>>>>>> 2c1d119 (laravel backend api)
 
     'max_age' => 0,
 

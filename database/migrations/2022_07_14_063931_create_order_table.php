@@ -19,14 +19,6 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-<<<<<<< HEAD
-            $table->foreignIdFor(Client::class);
-            $table->foreignIdFor(Service::class);
-            $table->date('Date');
-            $table->foreignIdFor(CarType::class);
-            $table->foreignIdFor(Zone::class)->nullable();
-            $table->string('status');
-=======
             $table->string('FullName');
             $table->string('phoneNumber');
             $table->string('Service');
@@ -36,7 +28,6 @@ return new class extends Migration
             $table->string('Time');
             $table->string('Prix');
             $table->string('status')->nullable();
->>>>>>> 2c1d119 (laravel backend api)
             $table->timestamps();
         });
     }

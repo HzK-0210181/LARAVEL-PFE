@@ -2,10 +2,6 @@
 
 namespace Database\Factories;
 
-<<<<<<< HEAD
-use App\Models\Group;
-=======
->>>>>>> 2c1d119 (laravel backend api)
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -23,10 +19,6 @@ class WorkerFactory extends Factory
     {
         return [
             'user_id' => User::where('role', 'worker')->get()->random()->id,
-<<<<<<< HEAD
-            'group_id' => Group::all()->random()->id
-=======
->>>>>>> 2c1d119 (laravel backend api)
         ];
     }
 }

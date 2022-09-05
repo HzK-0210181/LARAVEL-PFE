@@ -21,14 +21,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ZoneSeeder::class,
             UserSeeder::class,
-<<<<<<< HEAD
-            ClientSeeder::class,
-            CarTypeSeeder::class,
-            GroupSeeder::class,
-=======
             CommentSeeder::class,
             CarTypeSeeder::class,
->>>>>>> 2c1d119 (laravel backend api)
             WorkerSeeder::class,
             ServiceSeeder::class,
             OrderSeeder::class

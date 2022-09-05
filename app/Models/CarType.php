@@ -8,13 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class CarType extends Model
 {
     use HasFactory;
-<<<<<<< HEAD
-=======
-    protected $fillable=[
+    protected $fillable = [
         'type',
         'margin'
     ];
->>>>>>> 2c1d119 (laravel backend api)
+
     public function order()
     {
         return $this->belongsTo(Order::class);

@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Order;
 use App\Models\User;
-use App\Models\Worker;
 use Illuminate\Http\Request;
 
 class WorkerController extends Controller
@@ -16,69 +14,45 @@ class WorkerController extends Controller
             return $user;
         }
     }
-<<<<<<< HEAD
-    public function edit_worker(Request $request)
-    {
-        $id = $request->input('id');
-        User::where('id', $id)->update([
-            'first_name' => $request->input('first_name'),
-            'last_name' => $request->input('last_name'),
-            'telephone' => $request->input('telephone'),
-            'email' => $request->input('email'),
-            'role' => $request->input('role')
-        ]);
-        return response('it worked', 200)->withHeaders(['Accept' => 'application/json']);
-    }
-    public function delete_worker(Request $request)
-    {
-        $id = $request->input('id');
-        User::destroy($id);
-    }
-    public function show_orders_by_worker(Request $request)
-    {
-        $id = $request->input('id');
-        $zone = Worker::find($id)->group->zone_id;
-        $orders = Order::where('zone_id', $zone)->get();
-        return $orders;
-=======
+
     public function add_user(Request $request)
     {
-        $attr=$request->validate([
-            'first_name'=>['bail','required','max:50'],
-            'last_name'=>['bail','required','max:50'],
-            'telephone'=>['bail','required','numeric'],
-            'email'=>['bail','required','email'],
-            'password'=>['bail','required',],
-            'role'=>['bail','required',]
+        $attr = $request->validate([
+            'first_name' => ['bail', 'required', 'max:50'],
+            'last_name' => ['bail', 'required', 'max:50'],
+            'telephone' => ['bail', 'required', 'numeric'],
+            'email' => ['bail', 'required', 'email'],
+            'password' => ['bail', 'required',],
+            'role' => ['bail', 'required',]
         ]);
-        $user=User::create([
-            'first_name'=>$attr['first_name'],
-            'last_name'=>$attr['last_name'],
-            'telephone'=>$attr['telephone'],
-            'email'=>$attr['email'],
-            'password'=>$attr['password'],
-            'role'=>$attr['role']
+        $user = User::create([
+            'first_name' => $attr['first_name'],
+            'last_name' => $attr['last_name'],
+            'telephone' => $attr['telephone'],
+            'email' => $attr['email'],
+            'password' => $attr['password'],
+            'role' => $attr['role']
         ]);
-        return response($user,201)->withHeaders(['Accept' => 'application/json']);
+        return response($user, 201)->withHeaders(['Accept' => 'application/json']);
     }
     public function edit_user(Request $request)
     {
         $id = $request->input('id');
-        $attr=$request->validate([
-            'first_name'=>['required','max:50'],
-            'last_name'=>['required','max:50'],
-            'telephone'=>['required'],
-            'email'=>['required','email'],
-            'password'=>['required'],
-            'role'=>'required',
+        $attr = $request->validate([
+            'first_name' => ['required', 'max:50'],
+            'last_name' => ['required', 'max:50'],
+            'telephone' => ['required'],
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+            'role' => 'required',
         ]);
         User::where('id', $id)->update([
-            'first_name' =>$attr['first_name'],
-            'last_name' =>$attr['last_name'],
-            'telephone' =>$attr['telephone'],
-            'email' =>$attr['email'],
-            'password' =>$attr['password'],
-            'role' =>$attr['role']
+            'first_name' => $attr['first_name'],
+            'last_name' => $attr['last_name'],
+            'telephone' => $attr['telephone'],
+            'email' => $attr['email'],
+            'password' => $attr['password'],
+            'role' => $attr['role']
         ]);
         return response('it worked', 200)->withHeaders(['Accept' => 'application/json']);
     }
@@ -86,8 +60,7 @@ class WorkerController extends Controller
     {
         $id = $request->input('id');
         User::destroy($id);
-        return response('deleted successfully',201);
->>>>>>> 2c1d119 (laravel backend api)
+        return response('deleted successfully', 201);
     }
     public function logout(Request $request)
     {

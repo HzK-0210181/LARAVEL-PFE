@@ -3,11 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CarType;
-<<<<<<< HEAD
-use App\Models\Client;
-=======
 use App\Models\Comment;
->>>>>>> 2c1d119 (laravel backend api)
 use App\Models\Order;
 use App\Models\Service;
 use App\Models\Zone;
@@ -15,32 +11,7 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
-<<<<<<< HEAD
-    public function reserve(Request $request)
-    {
-        $orders = $request->collect()->each(function ($order) {
-            $client = Client::create([
-                'name' => $order['nameClient'],
-                'telephone' => $order['phoneNumber']
-            ]);
-            $service = Service::where('libelle', $order['Service'])->get('id')->value('id');
-            $cartype = CarType::where('type', $order['carType'])->get('id')->value('id');
-            $ids = [
-                'client' => $client->id,
-                'service' => $service,
-                'cartype' => $cartype,
-            ];
-            $order_info = Order::create([
-                'client_id' => $ids['client'],
-                'service_id' => $ids['service'],
-                'Date' => $order['date'],
-                'car_type_id' => $ids['cartype'],
-            ]);
-        });
-        return response('new order added', 200, ['Accept' => 'application/json']);
-    }
-}
-=======
+
     public function index()
     {
         $data = [
@@ -62,7 +33,7 @@ class OrderController extends Controller
             $ids = [
                 'service' => $service,
                 'car' => $cartype,
-                'adresseC'=>$zone
+                'adresseC' => $zone
             ];
             $order_info = Order::create([
                 'FullName' => $order['nameC'],
@@ -71,8 +42,8 @@ class OrderController extends Controller
                 'Date' => $order['date'],
                 'Cartype' => $ids['car'],
                 'Zone' => $ids['adresseC'],
-                'Time'=>$order['time'],
-                'Prix'=>$order['prixTotal']
+                'Time' => $order['time'],
+                'Prix' => $order['prixTotal']
             ]);
         });
         return response($orders, 200, ['Accept' => 'application/json']);
@@ -91,15 +62,14 @@ class OrderController extends Controller
         ]);
         return response($comment, 201, ['Accept' => 'application/json']);
     }
-    public function edit_order(Request $request,int $id)
+    public function edit_order(Request $request, int $id)
     {
-        Order::where('id',$id)->update([
-            'status'=>$request->input('status')
+        Order::where('id', $id)->update([
+            'status' => $request->input('status')
         ]);
-        return response('order updated',201)->withHeaders([
+        return response('order updated', 201)->withHeaders([
             ['Accept' => 'application/json']
         ]);
     }
 }
 // wrini fin w93at lik lerreur
->>>>>>> 2c1d119 (laravel backend api)

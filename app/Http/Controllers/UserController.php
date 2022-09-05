@@ -29,21 +29,13 @@ class UserController extends Controller
             'password' => bcrypt($attr['Password'])
         ]);
         $id_worker = $user->id;
-<<<<<<< HEAD
-        $corresponded_admin = User::where('email', 'theultimanhood@gmail.com')->where('role', 'admin')->get();
-
-        Mail::to($corresponded_admin)->send(new RegisteryMail($attr, $id_worker));
-        $response = [
-            'First Name' => $attr['First_Name'],
-            'Last Name' => $attr['Last_Name'],
-=======
         $corresponded_admin = User::where('email', 'omartoraif803@gmail.com')->where('role', 'admin')->get();
 
         Mail::to($corresponded_admin)->send(new RegisteryMail($attr, $id_worker));
         $response = [
             'First_Name' => $attr['First_Name'],
             'Last_Name' => $attr['Last_Name'],
->>>>>>> 2c1d119 (laravel backend api)
+
             'Telephone' => $attr['Telephone'],
             'Email' => $attr['Email'],
             'Password' => bcrypt($attr['Password']),
@@ -60,21 +52,14 @@ class UserController extends Controller
         Worker::create([
             'user_id' => $id
         ]);
-<<<<<<< HEAD
-        return 'he\'s added tp the database you might go check him in phpmyadmin';
-=======
         return response('he\'s added tp the database you might go check him in phpmyadmin', 201, ['Accept' => 'application/json']);
->>>>>>> 2c1d119 (laravel backend api)
     }
     public function deleted($id)
     {
         $id = (int)filter_var($id, FILTER_SANITIZE_NUMBER_INT);
         User::where('id', $id)->delete();
-<<<<<<< HEAD
-        return 'he\'s deleted in the database you might go check him in phpmyadmin';
-=======
+
         return response('he\'s deleted in the database you might go check him in phpmyadmin', 201, ['Accept' => 'application/json']);
->>>>>>> 2c1d119 (laravel backend api)
     }
     public function login(Request $request)
     {
@@ -84,10 +69,9 @@ class UserController extends Controller
         ]);
         $user = User::where('email', $attr['Email'])->first();
         $response = [
-<<<<<<< HEAD
-=======
+
             'Id' => $user->id,
->>>>>>> 2c1d119 (laravel backend api)
+
             'Email' => $attr['Email'],
             'Password' => $attr['Password'],
             'role' => $user->role

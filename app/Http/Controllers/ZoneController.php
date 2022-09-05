@@ -8,25 +8,6 @@ use Illuminate\Http\Request;
 
 class ZoneController extends Controller
 {
-<<<<<<< HEAD
-    public function assign_zone(Request $request)
-    {
-        $id = $request->input('id');
-        $check_null = Order::where('id', $id)->get()->value('zone_id');
-        if ($check_null != null) {
-            return 'this order was assigned to a group , please select an unassigned order !';
-        }
-        $order = Order::find($id);
-        $zone_id = $request->input('zone_id');
-        $order->zone_id = $zone_id;
-        $order->save();
-        return response($order, 200)->withHeaders([
-            'Accept' => 'application/json'
-        ]);
-    }
-=======
-    //hadik lfonction kat assigner zone l grp hna hiydnaha ok
->>>>>>> 2c1d119 (laravel backend api)
     public function adding_zone(Request $request)
     {
         $attr = $request->all(['name', 'region']);

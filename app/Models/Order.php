@@ -9,13 +9,6 @@ class Order extends Model
 {
     use HasFactory;
     protected $fillable = [
-<<<<<<< HEAD
-        'client_id',
-        'service_id',
-        'Date',
-        'car_type_id',
-        'zone_id'
-=======
         'FullName',
         'phoneNumber',
         'Service',
@@ -25,7 +18,6 @@ class Order extends Model
         'Time',
         'status',
         'Prix'
->>>>>>> 2c1d119 (laravel backend api)
     ];
     public function cartype()
     {

@@ -17,28 +17,18 @@ class ServiceSeeder extends Seeder
     {
         Service::create([
             'libelle' => 'Full Carwash',
-<<<<<<< HEAD
-=======
             'description' => 'Ceiling stain removal,Plastic cleaning,Leather renovation',
             'text' => fake()->text(200),
->>>>>>> 2c1d119 (laravel backend api)
             'prix' => '150'
         ]);
         Service::create([
             'libelle' => 'Interior Carwash',
-<<<<<<< HEAD
-=======
             'description' => 'Ceiling stain removal,Plastic cleaning,Leather renovation',
             'text' => fake()->text(200),
->>>>>>> 2c1d119 (laravel backend api)
             'prix' => '75'
         ]);
         Service::create([
             'libelle' => 'Exterior Carwash',
-<<<<<<< HEAD
-            'prix' => '45'
-        ]);
-=======
             'description' => 'Ceiling stain removal,Plastic cleaning,Leather renovation',
             'text' => fake()->text(200),
             'prix' => '45'
@@ -55,6 +45,5 @@ class ServiceSeeder extends Seeder
             'text' => fake()->text(200),
             'prix' => '120'
         ]);
->>>>>>> 2c1d119 (laravel backend api)
     }
 }

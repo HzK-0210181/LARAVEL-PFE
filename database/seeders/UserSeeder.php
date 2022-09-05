@@ -25,16 +25,13 @@ class UserSeeder extends Seeder
             'password' => bcrypt('somethingirrelevant'),
             'role' => 'admin'
         ]);
-<<<<<<< HEAD
-=======
         User::create([
-            'first_name' => 'omar',// dir les information dyalk hnaya 
+            'first_name' => 'omar',
             'last_name' => 'toraif',
             'telephone' => '+212 6 22 22 22 22',
             'email' => 'omartoraif803@gmail.com',
             'password' => bcrypt('omartoraif'),
             'role' => 'admin'
         ]);
->>>>>>> 2c1d119 (laravel backend api)
     }
 }

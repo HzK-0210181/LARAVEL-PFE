@@ -17,11 +17,4 @@ class Zone extends Model
     {
         return $this->belongsTo(Order::class);
     }
-<<<<<<< HEAD
-    public function group()
-    {
-        return $this->hasMany(Group::class);
-    }
-=======
->>>>>>> 2c1d119 (laravel backend api)
 }

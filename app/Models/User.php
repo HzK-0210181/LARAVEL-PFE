@@ -22,12 +22,8 @@ class User extends Authenticatable
         'last_name',
         'telephone',
         'email',
-<<<<<<< HEAD
-        'password'
-=======
         'password',
         'role'
->>>>>>> 2c1d119 (laravel backend api)
     ];
 
     /**

@@ -16,11 +16,8 @@ return new class extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->string('libelle');
-<<<<<<< HEAD
-=======
             $table->string('description');
             $table->text('text');
->>>>>>> 2c1d119 (laravel backend api)
             $table->string('prix');
             $table->timestamps();
         });
