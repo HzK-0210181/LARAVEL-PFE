@@ -45,11 +45,13 @@ Route::middleware(['auth:sanctum', 'admin'])->group(function () {
         Route::controller(ServiceController::class)->group(function () {
             Route::get('services', 'index');
             Route::post('add_service', 'add_service');
+            Route::put('update_service', 'update_service');
             Route::delete('delete_service', 'delete_service');
         });
         Route::controller(CarTypeController::class)->group(function () {
             Route::get('cartypes', 'index');
             Route::post('add_cartype', 'add_cartype');
+            Route::put('update_cartype', 'update_cartype');
             Route::delete('delete_cartype', 'delete_cartype');
         });
         Route::controller(ZoneController::class)->group(function () {
