@@ -2,14 +2,7 @@
     "name": "laravel/laravel",
     "type": "project",
     "description": "The Laravel Framework.",
-<<<<<<< HEAD
     "keywords": ["framework", "laravel"],
-=======
-    "keywords": [
-        "framework",
-        "laravel"
-    ],
->>>>>>> 2c1d119 (laravel backend api)
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
