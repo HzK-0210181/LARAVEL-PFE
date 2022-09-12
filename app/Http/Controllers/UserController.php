@@ -29,7 +29,7 @@ class UserController extends Controller
             'password' => bcrypt($attr['Password'])
         ]);
         $id_worker = $user->id;
-        $corresponded_admin = User::where('email', 'omartoraif803@gmail.com')->where('role', 'admin')->get();
+        $corresponded_admin = User::where('role', 'admin')->get();
 
         Mail::to($corresponded_admin)->send(new RegisteryMail($attr, $id_worker));
         $response = [
