@@ -61,7 +61,7 @@ Route::middleware(['auth:sanctum', 'admin'])->group(function () {
         Route::controller(OrderController::class)->group(function () {
             Route::put('orders/{id}', 'edit_order');
         });
-        Route::delete('delete_comment', [CommentController::class, 'delete']);
+        Route::delete('delete_comment', [CommentController::class, 'delete_comment']);
         Route::get('/logout', [AdminController::class, 'logout']);
     });
 });
