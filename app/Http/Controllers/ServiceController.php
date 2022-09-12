@@ -17,10 +17,10 @@ class ServiceController extends Controller
     public function add_service(Request $request)
     {
         Service::create([
-            'libelle' => $request->input('Libelle'),
-            'description' => $request->input('Description'),
-            'text' => $request->input('Text'),
-            'prix' => $request->input('Prix')
+            'libelle' => $request->input('libelle'),
+            'description' => $request->input('description'),
+            'text' => $request->input('text'),
+            'prix' => $request->input('prix')
         ]);
         return response('it has been created', 203)->withHeaders([
             'Accept' => 'application/json'
@@ -30,10 +30,10 @@ class ServiceController extends Controller
     {
         $id = $request->input('id');
         Service::where('id', $id)->update([
-            'libelle' => $request->input('Libelle'),
-            'description' => $request->input('Description'),
-            'text' => $request->input('Text'),
-            'prix' => $request->input('Prix')
+            'libelle' => $request->input('libelle'),
+            'description' => $request->input('description'),
+            'text' => $request->input('text'),
+            'prix' => $request->input('prix')
         ]);
         return response('it has been updated', 200, ['Accept' => 'application/json']);
     }
