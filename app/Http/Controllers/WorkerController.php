@@ -30,7 +30,7 @@ class WorkerController extends Controller
             'last_name' => $attr['last_name'],
             'telephone' => $attr['telephone'],
             'email' => $attr['email'],
-            'password' => $attr['password'],
+            'password' => bcrypt($attr['password']),
             'role' => $attr['role']
         ]);
         return response($user, 201)->withHeaders(['Accept' => 'application/json']);
@@ -51,7 +51,7 @@ class WorkerController extends Controller
             'last_name' => $attr['last_name'],
             'telephone' => $attr['telephone'],
             'email' => $attr['email'],
-            'password' => $attr['password'],
+            'password' => bcrypt($attr['password']),
             'role' => $attr['role']
         ]);
         return response('it worked', 200)->withHeaders(['Accept' => 'application/json']);
